@@ -314,6 +314,7 @@ function audiofield_jplayer($player_path, $audio_file) {
   </div></div></div>
     <script type="text/javascript" >
           jQuery( "#jquery_jplayer_' . $instanceIndex . '" ).jPlayer({
+            swfPath: "' . $player_base_path . '",
             cssSelectorAncestor: "#jp_container_' . $instanceIndex . '",
             ready: function() {
               jQuery(this).jPlayer( "setMedia", {
