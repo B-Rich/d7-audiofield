@@ -291,9 +291,9 @@ function audiofield_jplayer($player_path, $audio_file) {
     drupal_add_css($audio_players['jplayer']['css']);
     return '<div id="jquery_jplayer_' . $instanceIndex . '" class="jp-jplayer"></div>
 
-    <div class="jp-audio">
+    <div id="jp_container_'.$instanceIndex.'" class="jp-audio">
       <div class="jp-type-single">
-      <div id="jp_interface_' . $instanceIndex . '" class="jp-interface">
+      <div id="jp_interface_' . $instanceIndex . '" class="jp-gui jp-interface">
       <ul class="jp-controls">
         <li><a href="#" class="jp-play" tabindex="1" style="display: block; ">play</a></li>
         <li><a href="#" class="jp-pause" tabindex="1" style="display: none; ">pause</a></li>
@@ -314,6 +314,7 @@ function audiofield_jplayer($player_path, $audio_file) {
   </div></div></div>
     <script type="text/javascript" >
           jQuery( "#jquery_jplayer_' . $instanceIndex . '" ).jPlayer({
+            cssSelectorAncestor: "#jp_container_' . $instanceIndex . '",
             ready: function() {
               jQuery(this).jPlayer( "setMedia", {
                   mp3 : "' . $audio_file . '"
