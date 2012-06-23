@@ -114,7 +114,6 @@ function audiofield_theme() {
  * Get the object for the suitable player for the parameter resource
 */
 function audiofield_get_player($audio_url, $op) {
-  global $base_path;
    //Lets convert $op to lowercase
    $op = strtolower($op);
    $audio_players=audiofield_players();
@@ -123,7 +122,7 @@ function audiofield_get_player($audio_url, $op) {
    if (empty($player)) {
      return audiofield_embeddedplayer($audio_url);
    }
-  return call_user_func($player['callback'], $base_path . $player['path'], $audio_url);
+  return call_user_func($player['callback'], $player['path'], $audio_url);
 }
 
 /**
