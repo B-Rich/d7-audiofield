@@ -124,7 +124,7 @@ function audiofield_get_player($audio_url, $op) {
    if (empty($player)) {
      return audiofield_embeddedplayer($audio_url);
    }
-  return call_user_func($player['callback'], $base_path. $player['path'], $audio_url);
+  return call_user_func($player['callback'], $player['path'], $audio_url);
 }
 
 /**

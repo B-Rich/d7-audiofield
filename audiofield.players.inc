@@ -322,7 +322,7 @@ function audiofield_jplayer($player_path, $audio_file) {
   </div></div></div>
     <script type="text/javascript" >
           jQuery( "#jquery_jplayer_' . $instanceIndex . '" ).jPlayer({
-            swfPath: "' . $player_base_path . '",
+            swfPath: "' . base_path() . $player_base_path . '",
 			supplied : "mp3",
 			 wmode: "window",
 			cssSelectorAncestor: "#jp_container_' . $instanceIndex . '",
