@@ -126,7 +126,7 @@ function audiofield_embeddedplayer($audio_file) {
 
 function audiofield_wpaudioplayer($player_path, $audio_file) {
   $variables = array(
-    'player_path' =>  $player_path,
+    'player_path' =>  base_path() . $player_path,
     'audio_file' => $audio_file,
   );
   return theme('audiofield_players_wpaudioplayer', $variables);
@@ -146,7 +146,7 @@ function theme_audiofield_players_wpaudioplayer($variables) {
 
 function audiofield_xspf_slim($player_path, $audio_file) {
   $variables = array(
-    'player_path' =>  $player_path,
+    'player_path' =>  base_path() . $player_path,
     'audio_file' => $audio_file,
   );
   return theme('audiofield_players_xspf_slim', $variables);
@@ -163,7 +163,7 @@ function theme_audiofield_players_xspf_slim($variables) {
 
 function audiofield_premium_beat_single_track($player_path, $audio_file) {
   $variables = array(
-    'player_path' =>  $player_path,
+    'player_path' =>  base_path() . $player_path,
     'audio_file' => $audio_file,
   );
   return theme('audiofield_players_premium_beat_single_track', $variables);
@@ -180,7 +180,7 @@ function theme_audiofield_players_premium_beat_single_track($variables) {
 
 function audiofield_premium_beat_thin($player_path, $audio_file) {
   $variables = array(
-    'player_path' =>  $player_path,
+    'player_path' =>  base_path() . $player_path,
     'audio_file' => $audio_file,
   );
   return theme('audiofield_players_premium_beat_thin', $variables);
@@ -196,7 +196,7 @@ function theme_audiofield_players_premium_beat_thin($variables) {
 
 function audiofield_premium_beat_mini($player_path, $audio_file) {
   $variables = array(
-    'player_path' =>  $player_path,
+    'player_path' =>  base_path() . $player_path,
     'audio_file' => $audio_file,
   );
   return theme('audiofield_players_premium_beat_mini', $variables);
@@ -220,7 +220,7 @@ function audiofield_soundmanager2($player_path, $audio_file) {
     $player_base_path = variable_get('audiofield_players_dir', 'sites/all/libraries/player') . "/soundmanager2";
     $ie_js = array(
       '#type' => 'markup',
-      '#markup' => '<!--[if IE]><script type="text/javascript" src="'.$player_path.'/demo/360-player/script/excanvas.js"></script><![endif]-->',
+      '#markup' => '<!--[if IE]><script type="text/javascript" src="'.base_path() . $player_path.'/demo/360-player/script/excanvas.js"></script><![endif]-->',
     );
     drupal_add_html_head($ie_js, 'audiofield');
 
@@ -237,7 +237,7 @@ function audiofield_soundmanager2($player_path, $audio_file) {
     	</div>
     <script type="text/javascript">
     
-    soundManager.url = "'.$player_path.'/swf"; // directory where SM2 .SWFs live
+    soundManager.url = "'.base_path() . $player_path.'/swf"; // directory where SM2 .SWFs live
     soundManager.useFastPolling = true; // increased JS callback frequency, combined with useHighPerformance = true
     soundManager.waitForWindowLoad = true;
 
@@ -273,7 +273,7 @@ function audiofield_flowplayer($player_path, $audio_file) {
 
 function audiofield_googlereader($player_path, $audio_file) {
   $variables = array(
-    'player_path' =>  $player_path,
+    'player_path' =>  base_path() . $player_path,
     'audio_file' => $audio_file,
   );
   return theme('audiofield_googlereader', $variables);
